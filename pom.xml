@@ -29,34 +29,20 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <!--<configuration>-->
-                            <!--<transformers>-->
-                                <!--&lt;!&ndash; add Main-Class to manifest file &ndash;&gt;-->
-                                <!--<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
-                                    <!--<mainClass>com.graphaware.neo4j.databridge.DatabridgeRunner</mainClass>-->
-                                <!--</transformer>-->
-                                <!--&lt;!&ndash; merge META-INF/services &ndash;&gt;-->
-                                <!--<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>-->
-                            <!--</transformers>-->
-                            <!--<filters>-->
-
-                                <!--<filter>-->
-                                    <!--<artifact>*:*</artifact>-->
-                                    <!--<excludes>-->
-                                        <!--<exclude>META-INF/*.SF</exclude>-->
-                                        <!--<exclude>META-INF/*.DSA</exclude>-->
-                                        <!--<exclude>META-INF/*.RSA</exclude>-->
-                                    <!--</excludes>-->
-                                <!--</filter>-->
-
-                            <!--</filters>-->
-                        <!--</configuration>-->
                     </execution>
                 </executions>
             </plugin>
 
         </plugins>
 
+        <extensions>
+            <extension>
+                <groupId>ar.com.synergian</groupId>
+                <artifactId>wagon-git</artifactId>
+                <version>0.2.5</version>
+            </extension>
+        </extensions>
+        
     </build>
 
     <dependencies>
@@ -72,7 +58,43 @@
             <artifactId>chronicle-map</artifactId>
             <version>3.10.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.7.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>synergian-repo</id>
+            <url>https://raw.github.com/synergian/wagon-git/releases</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+
+        <repository>
+            <id>offheap-releases</id>
+            <name>OffHeap Release Repository</name>
+            <url>git:releases://git@bitbucket.org:vbickers/offheap.git</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>offheap-snapshots</id>
+            <name>OffHeap Snapshot Repository</name>
+            <url>git:snapshots://git@bitbucket.org:vbickers/offheap.git</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
 
 </project>

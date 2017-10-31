@@ -2,5 +2,7 @@
 target/
 .idea/
 *.iml
+*.ipr
+*.iws
 *.map
 dependency-reduced-pom.xml

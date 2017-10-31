@@ -74,7 +74,9 @@ public class Value {
     }
 
     public static Value of(Object value) {
-        return new Value(value);
+        if (value != null) {
+            return new Value(value);
+        } return null;
     }
 
 }

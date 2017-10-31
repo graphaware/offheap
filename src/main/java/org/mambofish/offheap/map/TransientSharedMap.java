@@ -13,13 +13,13 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author vince
  */
-public class TransientSharedMap implements Map<String, String> {
+public class TransientSharedMap implements Map<Key, Value> {
 
     private Map map;
 
     public TransientSharedMap(long size) {
 
-        ChronicleMap<CharSequence, CharSequence> chronicleMap = null;
+        ChronicleMap<byte[], byte[]> chronicleMap = null;
         String filename = System.getProperty("file");
         File file = null;
         try {
@@ -34,7 +34,7 @@ public class TransientSharedMap implements Map<String, String> {
             }
 
             chronicleMap = ChronicleMapBuilder
-                    .of(CharSequence.class, CharSequence.class)
+                    .of(byte[].class, byte[].class)
                     .entries(size)
                     .averageKeySize(10.0d)
                     .averageValueSize(20.0d)
@@ -60,31 +60,31 @@ public class TransientSharedMap implements Map<String, String> {
 
     @Override
     public boolean containsKey(Object key) {
-        return map.containsKey(key);
+        return map.containsKey(((Key) key).bytes());
     }
 
     @Override
     public boolean containsValue(Object value) {
-        return map.containsValue(value);
+        return map.containsValue(((Value) value).bytes());
     }
 
     @Override
-    public String get(Object key) {
-        return String.valueOf(map.get(key));
+    public Value get(Object key) {
+        return Value.of(map.get(((Key) key).bytes()));
     }
 
     @Override
-    public String put(String key, String value) {
-        return String.valueOf(map.put(key, value));
+    public Value put(Key key, Value value) {
+        return Value.of(map.put(key.bytes(), value.bytes()));
     }
 
     @Override
-    public String remove(Object key) {
-        return String.valueOf(map.remove(key));
+    public Value remove(Object key) {
+        return Value.of(map.remove(((Key) key).bytes()));
     }
 
     @Override
-    public void putAll(@NotNull Map<? extends String, ? extends String> m) {
+    public void putAll(@NotNull Map<? extends Key, ? extends Value> m) {
         map.putAll(m);
     }
 
@@ -95,19 +95,19 @@ public class TransientSharedMap implements Map<String, String> {
 
     @NotNull
     @Override
-    public Set<String> keySet() {
+    public Set<Key> keySet() {
         return map.keySet();
     }
 
     @NotNull
     @Override
-    public Collection<String> values() {
+    public Collection<Value> values() {
         return map.values();
     }
 
     @NotNull
     @Override
-    public Set<Entry<String, String>> entrySet() {
+    public Set<Entry<Key, Value>> entrySet() {
         return map.entrySet();
     }
 }
