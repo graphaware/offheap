@@ -1,6 +1,6 @@
-# Off-heap maps and cache
+# JVM off-heap maps and cache library
 
-The components in this library allow processes running in different JVMs on the same machine to share data.
+The components in the OffHeap library allow processes running in different JVMs on the same machine to share data using off-heap memory structures.
 
 ---
 
