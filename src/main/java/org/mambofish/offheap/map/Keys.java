@@ -9,9 +9,9 @@ import java.util.Set;
  */
 class Keys implements Set<Key> {
 
-    private final SharedMap map;
+    private final OffHeapMap map;
 
-    Keys(SharedMap map) {
+    Keys(OffHeapMap map) {
         this.map = map;
     }
 

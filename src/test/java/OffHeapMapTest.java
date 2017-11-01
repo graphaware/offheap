@@ -6,13 +6,13 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 import org.mambofish.offheap.map.Key;
-import org.mambofish.offheap.map.SharedMap;
+import org.mambofish.offheap.map.OffHeapMap;
 import org.mambofish.offheap.map.Value;
 
 /**
  * @author vince
  */
-public class SharedMapTest {
+public class OffHeapMapTest {
 
     private File file = new File("test.dat");
 
@@ -26,7 +26,7 @@ public class SharedMapTest {
     @Test
     public void create() {
 
-        SharedMap sharedMap = new SharedMap(file,20, 0);
+        OffHeapMap sharedMap = new OffHeapMap(file,20, 0);
         sharedMap.clear();
 
         sharedMap.put(Key.of("key"), Value.of("Value"));
@@ -39,7 +39,7 @@ public class SharedMapTest {
 
     @Test
     public void createTwo() {
-        SharedMap sharedMap = new SharedMap(file,20, 0);
+        OffHeapMap sharedMap = new OffHeapMap(file,20, 0);
         sharedMap.clear();
 
         sharedMap.put(Key.of("one"), Value.of("one"));
@@ -59,7 +59,7 @@ public class SharedMapTest {
 
         int count = 10_000_000;
 
-        SharedMap sharedMap = new SharedMap(file,1_000_000, 0);
+        OffHeapMap sharedMap = new OffHeapMap(file,1_000_000, 0);
         sharedMap.clear();
 
         for (int i = 0; i < count; i ++) {

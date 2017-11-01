@@ -8,9 +8,9 @@ import java.util.Iterator;
  */
 class Values implements Collection<Value> {
 
-    private final SharedMap map;
+    private final OffHeapMap map;
 
-    Values(SharedMap map) {
+    Values(OffHeapMap map) {
         this.map = map;
     }
 

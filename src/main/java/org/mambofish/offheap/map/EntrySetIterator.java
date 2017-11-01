@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 
 class EntrySetIterator extends AbstractSharedMapIterator implements Iterator<Map.Entry<Key, Value>> {
 
-    EntrySetIterator(SharedMap map) {
+    EntrySetIterator(OffHeapMap map) {
         this.map = map;
     }
 

@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 
 import org.mambofish.offheap.map.Key;
-import org.mambofish.offheap.map.TransientSharedMap;
+import org.mambofish.offheap.map.SharedOffHeapMap;
 import org.mambofish.offheap.map.Value;
 import org.springframework.cache.support.AbstractValueAdaptingCache;
 
@@ -16,7 +16,7 @@ public class SharedMapCache extends AbstractValueAdaptingCache {
     protected SharedMapCache(String name) {
         super(false);
         this.name = name;
-        this.store = new TransientSharedMap(2048);
+        this.store = new SharedOffHeapMap(2048);
     }
 
     @Override

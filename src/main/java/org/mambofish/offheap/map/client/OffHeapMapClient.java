@@ -3,15 +3,15 @@ package org.mambofish.offheap.map.client;
 import java.io.*;
 
 import org.mambofish.offheap.map.Key;
-import org.mambofish.offheap.map.SharedMap;
+import org.mambofish.offheap.map.OffHeapMap;
 import org.mambofish.offheap.map.Value;
 
 /**
  * @author vince
  */
-public class SharedMapClient extends AbstractMapClient {
+public class OffHeapMapClient extends AbstractMapClient {
 
-    public SharedMapClient(SharedMap sharedMap) {
+    public OffHeapMapClient(OffHeapMap sharedMap) {
         this.map = sharedMap;
     }
 
@@ -35,7 +35,7 @@ public class SharedMapClient extends AbstractMapClient {
         int partitionCount = Integer.parseInt(System.getProperty("partitions", "10000"));
         long address = Long.parseLong(System.getProperty("address", "0"));
 
-        AbstractMapClient client = new SharedMapClient(new SharedMap(file, partitionCount, address));
+        AbstractMapClient client = new OffHeapMapClient(new OffHeapMap(file, partitionCount, address));
 
         client.listen();
     }

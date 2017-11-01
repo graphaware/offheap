@@ -6,9 +6,9 @@ import java.util.*;
  * @author vince
  */
 class EntrySet implements Set<Map.Entry<Key, Value>> {
-    private final SharedMap map;
+    private final OffHeapMap map;
 
-    protected EntrySet(SharedMap map) {
+    protected EntrySet(OffHeapMap map) {
         this.map = map;
     }
 

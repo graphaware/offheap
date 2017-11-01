@@ -13,17 +13,20 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author vince
  */
-public class TransientSharedMap implements Map<Key, Value> {
+public class SharedOffHeapMap implements Map<Key, Value> {
 
     private Map map;
 
-    public TransientSharedMap(long size) {
+    public SharedOffHeapMap(File file, long size) {
+        map(file, size);
+    }
+
+    public SharedOffHeapMap(long size) {
 
         ChronicleMap<byte[], byte[]> chronicleMap = null;
         String filename = System.getProperty("file");
         File file = null;
         try {
-
             if (filename == null) {
                 file = File.createTempFile("epsilon-shared", ".map");
                 file.deleteOnExit();
@@ -32,14 +35,7 @@ public class TransientSharedMap implements Map<Key, Value> {
                 file = new File(filename);
                 System.out.println("Using persistent map: " + file.getAbsolutePath());
             }
-
-            chronicleMap = ChronicleMapBuilder
-                    .of(byte[].class, byte[].class)
-                    .entries(size)
-                    .averageKeySize(10.0d)
-                    .averageValueSize(20.0d)
-                    .checksumEntries(false)
-                    .createPersistedTo(file);
+            map(file, size);
         } catch (IOException ioe) {
             ioe.printStackTrace();
             System.exit(1);
@@ -109,5 +105,26 @@ public class TransientSharedMap implements Map<Key, Value> {
     @Override
     public Set<Entry<Key, Value>> entrySet() {
         return map.entrySet();
+    }
+
+    private void map(File file, long size) {
+
+        ChronicleMap<byte[], byte[]> chronicleMap = null;
+
+        try {
+            chronicleMap = ChronicleMapBuilder
+                    .of(byte[].class, byte[].class)
+                    .entries(size)
+                    .averageKeySize(10.0d)
+                    .averageValueSize(20.0d)
+                    .checksumEntries(false)
+                    .createPersistedTo(file);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            System.exit(1);
+        }
+
+        this.map = chronicleMap;
+
     }
 }

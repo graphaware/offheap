@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  */
 public abstract class AbstractSharedMapIterator {
 
-    SharedMap map;
+    OffHeapMap map;
 
     long offset, locationOffset;
 

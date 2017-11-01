@@ -1,13 +1,13 @@
 package org.mambofish.offheap.map.client;
 
-import org.mambofish.offheap.map.TransientSharedMap;
+import org.mambofish.offheap.map.SharedOffHeapMap;
 
 /**
  * @author vince
  */
-public class TransientSharedMapClient extends AbstractMapClient {
+public class SharedOffHeapMapClient extends AbstractMapClient {
 
-    public TransientSharedMapClient(TransientSharedMap sharedMap) {
+    public SharedOffHeapMapClient(SharedOffHeapMap sharedMap) {
         map = sharedMap;
     }
 
@@ -30,7 +30,7 @@ public class TransientSharedMapClient extends AbstractMapClient {
 
         int size = Integer.parseInt(System.getProperty("size", "10000"));
 
-        AbstractMapClient client = new TransientSharedMapClient(new TransientSharedMap(size));
+        AbstractMapClient client = new SharedOffHeapMapClient(new SharedOffHeapMap(size));
 
         client.listen();
 

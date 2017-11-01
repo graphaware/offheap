@@ -14,7 +14,7 @@ import sun.misc.Unsafe;
 /**
  * @author vince
  */
-public class SharedMap implements Map<Key, Value> {
+public class OffHeapMap implements Map<Key, Value> {
 
     private final Unsafe unsafe;
     private final int addressSize;
@@ -28,11 +28,11 @@ public class SharedMap implements Map<Key, Value> {
     private boolean closed = false;
     private long itemCount;
 
-    public SharedMap(File file, int partitionCount, long address) {
+    public OffHeapMap(File file, int partitionCount, long address) {
         this(file, partitionCount, address, Arrays::hashCode);
     }
 
-    private SharedMap(File file, int partitionCount, long address, Function<byte[], Integer> hashFunction) {
+    private OffHeapMap(File file, int partitionCount, long address, Function<byte[], Integer> hashFunction) {
 
         this.unsafe = theUnsafe();
         this.addressSize = unsafe.addressSize();

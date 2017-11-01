@@ -5,11 +5,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.mambofish.offheap.map.SharedOffHeapMap;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 
 /**
- * This cache manager is backed by one or more {@link org.mambofish.offheap.map.TransientSharedMap} caches
+ * This cache manager is backed by one or more {@link SharedOffHeapMap} caches
  *
  * TransientSharedMap allows multiple processes in different JVMS running on a single machine to access map entries via
  * shared memory. The shared map is also persisted to disk using a memory-mapped file and will survive a restart of any

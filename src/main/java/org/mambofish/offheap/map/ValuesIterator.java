@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  */
 class ValuesIterator extends AbstractSharedMapIterator implements Iterator<Value> {
 
-    ValuesIterator(SharedMap map) {
+    ValuesIterator(OffHeapMap map) {
         this.map = map;
     }
 
