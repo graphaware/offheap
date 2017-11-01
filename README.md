@@ -13,7 +13,7 @@ A Spring-compatible CacheManager:
 @EnableCaching
 public class CacheConfig {
 
-    public static final String CACHE_NAMES = "users, profiles";
+    public static final String[] CACHE_NAMES = {"users", "profiles"};
 
     @Bean
     public CacheManager cacheManager() {
