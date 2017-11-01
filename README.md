@@ -2,7 +2,7 @@
 
 The components in this library allow processes running in different JVMs on the same machine to share data.
 
---
+---
 
 ## SharedMapCacheManager
 
@@ -23,7 +23,7 @@ public class CacheConfig {
 }
 ```
 
---
+---
 
 ## SharedOffHeapMap
 
@@ -45,7 +45,7 @@ Map<Key, Value> sharedMap = new SharedOffHeapMap(new File(System.getProperty("ja
 
 If you need an off-heap map that can grow arbitrarily, see the next section
 
---
+---
 
 ## OffHeapMap
 
@@ -58,13 +58,13 @@ An `OffHeapMap` is created with a number of partitions. For optimum performance,
 Map<Key, Value> offHeapMap = new OffHeapMap(10_000);
 ```
 
---
+---
 
 ## Constraints
 
 In both maps keys must be Strings, and null keys are not supported. Values can be any type, and again null values are not permitted. 
 
---
+---
 
 ## Key and Value types
 
@@ -86,7 +86,7 @@ _To retrieve an entry from the map_:
 List<String> friends = map.get(Key.of("friends")).get();
 ```
 
---
+---
 
 ## Using the offheap library in your own projects
 
