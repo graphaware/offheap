@@ -41,7 +41,6 @@ public class SharedOffHeapMap implements Map<Key, Value> {
             System.exit(1);
         }
 
-        this.map = chronicleMap;
     }
 
     @Override
