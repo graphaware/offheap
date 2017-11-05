@@ -87,10 +87,24 @@ List<String> friends = map.get(Key.of("friends")).get();
 ```
 
 ---
+## Licensing
+OffHeap is licensed under the Apache 2.0 License. You should have received a copy of the license with this code. 
+
+---
+
+## Acknowledgements
+Inspiration, ideas and some code for this library have come from a number of open-source projects, including:
+
+- https://github.com/cfelde/BinaryOffheapHashMap
+- https://github.com/OpenHFT/Chronicle-Map 
+
+The SharedOffHeapMap currently uses a Chronicle map under the hood. 
+
+---
 
 ## Using the offheap library in your own projects
 
-This is a new project and there is no official release on maven yet. However snapshots are published to BitBucket and you can use these:
+Releases are published on BitBucket. The latest release version is 1.0
 
 ```
 # maven example
@@ -99,7 +113,7 @@ This is a new project and there is no official release on maven yet. However sna
     <dependency>
         <groupId>org.mambofish</groupId>
         <artifactId>offheap</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </dependency>
 </dependencies>
 
@@ -107,10 +121,10 @@ This is a new project and there is no official release on maven yet. However sna
 
     <repository>
         <id>offheap</id>
-        <url>https://api.bitbucket.org/1.0/repositories/vbickers/offheap/raw/snapshots</url>
-        <snapshots>
+        <url>https://api.bitbucket.org/1.0/repositories/vbickers/offheap/raw/releases</url>
+        <releases>
             <enabled>true</enabled>
-        </snapshots>
+        </releases>
     </repository>
 
 </repositories>
