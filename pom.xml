@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.mambofish</groupId>
+    <groupId>com.graphaware</groupId>
     <artifactId>offheap</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2</version>
 
     <!-- configure the build for 1.8 target -->
 
@@ -80,14 +80,15 @@
         <repository>
             <id>offheap-releases</id>
             <name>OffHeap Release Repository</name>
-            <url>git:releases://git@bitbucket.org:vbickers/offheap.git</url>
+            <url>git:releases://git@github.com:graphaware/offheap.git</url>
         </repository>
 
         <snapshotRepository>
             <id>offheap-snapshots</id>
             <name>OffHeap Snapshot Repository</name>
-            <url>git:snapshots://git@bitbucket.org:vbickers/offheap.git</url>
+            <url>git:snapshots://git@github.com:graphaware/offheap.git</url>
         </snapshotRepository>
+        
     </distributionManagement>
 
     <repositories>
@@ -99,9 +100,9 @@
     </repositories>
 
     <scm>
-        <connection>scm:git:ssh://git@bitbucket.org/vbickers/offheap.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/vbickers/offheap.git</developerConnection>
-        <url>https://bitbucket.org/vbickers/offheap</url>
+        <connection>scm:git:ssh://git@github.com:graphaware/offheap.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:graphaware/offheap.git</developerConnection>
+        <url>https://github.com/graphaware/offheap</url>
         <tag>HEAD</tag>
     </scm>
 

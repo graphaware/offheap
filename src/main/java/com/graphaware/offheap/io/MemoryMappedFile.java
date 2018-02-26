@@ -1,4 +1,4 @@
-package org.mambofish.offheap.io;
+package com.graphaware.offheap.io;
 
 import java.io.File;
 import java.io.RandomAccessFile;

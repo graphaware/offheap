@@ -1,11 +1,11 @@
-package org.mambofish.offheap.cache;
+package com.graphaware.offheap.cache;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.mambofish.offheap.map.SharedOffHeapMap;
+import com.graphaware.offheap.map.SharedOffHeapMap;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 

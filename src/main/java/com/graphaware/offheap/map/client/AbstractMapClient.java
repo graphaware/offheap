@@ -1,4 +1,4 @@
-package org.mambofish.offheap.map.client;
+package com.graphaware.offheap.map.client;
 
 import java.io.*;
 import java.util.Map;

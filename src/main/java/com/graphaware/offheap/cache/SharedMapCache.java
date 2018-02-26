@@ -1,11 +1,11 @@
-package org.mambofish.offheap.cache;
+package com.graphaware.offheap.cache;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-import org.mambofish.offheap.map.Key;
-import org.mambofish.offheap.map.SharedOffHeapMap;
-import org.mambofish.offheap.map.Value;
+import com.graphaware.offheap.map.Key;
+import com.graphaware.offheap.map.SharedOffHeapMap;
+import com.graphaware.offheap.map.Value;
 import org.springframework.cache.support.AbstractValueAdaptingCache;
 
 public class SharedMapCache extends AbstractValueAdaptingCache {

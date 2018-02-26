@@ -1,4 +1,4 @@
-package org.mambofish.offheap.map;
+package com.graphaware.offheap.map;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 
-import org.mambofish.offheap.io.MemoryMappedFile;
+import com.graphaware.offheap.io.MemoryMappedFile;
 import sun.misc.Unsafe;
 
 /**

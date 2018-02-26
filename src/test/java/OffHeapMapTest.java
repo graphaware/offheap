@@ -5,9 +5,9 @@ import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mambofish.offheap.map.Key;
-import org.mambofish.offheap.map.OffHeapMap;
-import org.mambofish.offheap.map.Value;
+import com.graphaware.offheap.map.Key;
+import com.graphaware.offheap.map.OffHeapMap;
+import com.graphaware.offheap.map.Value;
 
 /**
  * @author vince

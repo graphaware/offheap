@@ -1,6 +1,6 @@
-package org.mambofish.offheap.map.client;
+package com.graphaware.offheap.map.client;
 
-import org.mambofish.offheap.map.SharedOffHeapMap;
+import com.graphaware.offheap.map.SharedOffHeapMap;
 
 /**
  * @author vince

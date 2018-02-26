@@ -1,4 +1,4 @@
-package org.mambofish.offheap.map;
+package com.graphaware.offheap.map;
 
 import java.io.File;
 import java.io.IOException;

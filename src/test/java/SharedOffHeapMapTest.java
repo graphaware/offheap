@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
-import org.mambofish.offheap.map.Key;
-import org.mambofish.offheap.map.SharedOffHeapMap;
-import org.mambofish.offheap.map.Value;
+import com.graphaware.offheap.map.Key;
+import com.graphaware.offheap.map.SharedOffHeapMap;
+import com.graphaware.offheap.map.Value;
 
 /**
  * @author vince
