@@ -104,29 +104,17 @@ The SharedOffHeapMap currently uses a Chronicle map under the hood.
 
 ## Using the offheap library in your own projects
 
-Releases are published on GitHub. The latest release version is 1.2
+Releases are published on Maven Central. The latest release version is 1.0.0
 
 ```
 # maven example
 
 <dependencies>
     <dependency>
-        <groupId>com.graphaware</groupId>
+        <groupId>com.graphaware.offheap</groupId>
         <artifactId>offheap</artifactId>
-        <version>1.2</version>
+        <version>1.0.0</version>
     </dependency>
 </dependencies>
-
-<repositories>
-
-    <repository>
-        <id>offheap</id>
-        <url>https://raw.github.com/graphaware/offheap.git/releases</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-    </repository>
-
-</repositories>
 
 ```
