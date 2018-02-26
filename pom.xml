@@ -22,6 +22,10 @@
     <artifactId>offheap</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <name>GraphAware Offheap</name>
+    <description>Off-heap Spring-compliant cache</description>
+    <url>https://github.com/graphaware/offheap</url>
+
     <licenses>
         <license>
             <name>Apache License, version 2.0</name>
