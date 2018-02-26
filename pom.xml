@@ -99,8 +99,8 @@
     </repositories>
 
     <scm>
-        <connection>scm:git:ssh://git@bitbucket.org:vbickers/offheap.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org:vbickers/offheap.git</developerConnection>
+        <connection>scm:git:ssh://git@bitbucket.org/vbickers/offheap.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.org/vbickers/offheap.git</developerConnection>
         <url>https://bitbucket.org/vbickers/offheap</url>
         <tag>HEAD</tag>
     </scm>
