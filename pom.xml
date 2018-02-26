@@ -20,7 +20,7 @@
 
     <groupId>com.graphaware.offheap</groupId>
     <artifactId>offheap</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <licenses>
         <license>
@@ -47,7 +47,7 @@
         <connection>scm:git:ssh://git@github.com:graphaware/offheap.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:graphaware/offheap.git</developerConnection>
         <url>https://github.com/graphaware/offheap</url>
-        <tag>offheap-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
